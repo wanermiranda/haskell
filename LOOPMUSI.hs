@@ -5,7 +5,8 @@ main = do contents <- getContents
           loop_musi $ map read (words$contents)
 
 
-loop_musi [] = putStrLn $ show 0
+loop_musi [] = do   putStrLn $ show 0
+                    return()
 loop_musi (x:xs) 
     | x == 0 = return ()
     | drop x xs == [] = do  putStrLn $ show (compute $ (take x xs))
